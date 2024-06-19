@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:untitled2/9.2%20Call%20Pixabay%20API%20&%20Represent%20in%20UI/view.dart';
 
-import '9.1 jsoun api/view/apiview1.dart';
+import '9.2 Call Pixabay API & Represent in UI/provider/provider.dart';
 
 void main() {
-  ApiService apiServices = ApiService();
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(
+      create: (context) => ApiProvider(),
+    )
+  ], child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: JsonParsing(),
+      home: ApiData(),
     );
   }
 }
