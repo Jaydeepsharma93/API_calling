@@ -9,8 +9,7 @@ class ApiData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = context.watch<ApiProvider>();
-    final providerF = context.read<ApiProvider>();
+
 
     return Scaffold(
       appBar: AppBar(
@@ -20,25 +19,25 @@ class ApiData extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              providerF.fetchData(controller.text);
+              Provider.of<ApiProvider>(context,listen: false).fetchData(controller.text);
             },
             icon: const Icon(Icons.search),
           )
         ],
       ),
-      body: provider.isLoading
+      body: Provider.of<ApiProvider>(context,listen: true).isLoading
           ? const Center(
               child: CircularProgressIndicator(),
             )
           : GridView.builder(
-              itemCount: provider.data['hits'].length,
+              itemCount: Provider.of<ApiProvider>(context,listen: true).data['hits']?.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
               ),
               itemBuilder: (context, index) => Card(
                   child: Image.network(
                       fit: BoxFit.cover,
-                      '${provider.data['hits'][index]['largeImageURL']}')),
+                      Provider.of<ApiProvider>(context,listen: true).data['hits'][index]['largeImageURL'])),
             ),
     );
   }

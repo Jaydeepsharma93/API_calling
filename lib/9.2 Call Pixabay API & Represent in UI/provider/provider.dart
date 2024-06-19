@@ -18,7 +18,7 @@ class ApiProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  HomeProvider() {
+  ApiProvider() {
     fetchData('nature');
   }
 }
