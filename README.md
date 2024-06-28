@@ -1,16 +1,5 @@
 # untitled2
 
-A new Flutter project.
+<video src="https://github.com/Jaydeepsharma93/API_calling/assets/143181361/c0b4bda6-fce9-481e-957c-80525d77c2b8" width = 32%>
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
